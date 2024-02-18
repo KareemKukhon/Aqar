@@ -31,7 +31,7 @@ This application aims to streamline the buying and selling process for real esta
 1. Clone the repository:
 
 ```bash
-git clone [<repository_url>](https://github.com/KareemKukhon/Graduation-Project.git)
+git clone https://github.com/KareemKukhon/Graduation-Project.git
 ```
 
 2. Navigate to the project directory:
