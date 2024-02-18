@@ -1,3 +1,4 @@
+```markdown
 # Real Estate Selling Application Readme
 
 ## Welcome
@@ -31,3 +32,39 @@ This application aims to streamline the buying and selling process for real esta
 
 ```bash
 git clone <repository_url>
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd <project_directory>
+```
+
+3. Install dependencies:
+
+```bash
+# For Flutter dependencies
+flutter pub get
+
+# For TypeScript (TSED) dependencies
+# (Assuming dependencies are managed via npm or yarn)
+npm install
+# or
+yarn install
+```
+
+4. Run the application:
+
+```bash
+# For Flutter frontend
+flutter run
+
+# For TypeScript backend
+# (Assuming the backend server is configured to run locally)
+# Command varies depending on the setup of the backend server
+```
+
+## Contributors
+
+- [Mohammed Kareem Kukhon]
+- [Yaqeen Yaseen]
