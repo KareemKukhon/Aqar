@@ -66,5 +66,5 @@ flutter run
 
 ## Contributors
 
-- [Mohammed Kareem Kukhon]
-- [Yaqeen Yaseen]
+- "Mohammed Kareem" Kukhon
+- Yaqeen Yaseen
