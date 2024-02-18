@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<h2>Chat App</h2>
+
+<div id="chat">
+    <!-- Display chat messages here -->
+</div>
+
+<form id="chatForm">
+    <input type="text" id="recipientId" placeholder="Recipient ID">
+    <input type="text" id="message" placeholder="Type your message">
+    <button type="button" onclick="sendMessage()">Send Message</button>
+</form>
+
+<script>
+    const socket = io.connect('http://localhost:8083'); // Replace with your server URL
+
+    // Event listener for new messages
+    socket.on('newMessage', function(data) {
+        // Display the new message
+        $('#chat').append('<p><strong>' + data.data.sender + ':</strong> ' + data.data.message + '</p>');
+    });
+
+    // Event listener for unread messages
+    socket.on('unreadMessages', function(data) {
+        // Display unread messages
+        for (const message of data.data) {
+            $('#chat').append('<p><strong>' + message.sender + ':</strong> ' + message.message + '</p>');
+        }
+    });
+
+    // Function to send a message
+    function sendMessage() {
+        const recipientId = $('#recipientId').val();
+        const message = $('#message').val();
+
+        // Emit a message to the server
+        socket.emit('sendChatMessage', { recipientId, message });
+
+        // Clear the input fields
+        $('#recipientId').val('');
+        $('#message').val('');
+    }
+</script>
+
+</body>
+</html>
